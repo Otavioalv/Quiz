@@ -1,22 +1,41 @@
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+import Container from './components/layout/Container';
+import NavBar from './components/layout/NavBar';
+import Home from './components/pages/Home';
+import Footer from './components/layout/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <NavBar/>
+
+      <Container customClass="min-height">
+
+        <Routes>
+      
+          <Route
+            path='/'
+            element={<Home/>}
+          />
+
+          <Route
+            path='/Quiz'
+            element={<p>Quiz</p>}
+          />
+
+          <Route
+            path='/About'
+            element={<p>Sobre</p>}
+          />
+      
+        </Routes>
+      
+        </Container>
+
+      <Footer/>
+
+    </Router>
   );
 }
 

@@ -1,0 +1,28 @@
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.homeContainer__card {
+    margin-top: 1.5em;
+}
+
+.homeContainer__info {
+    background-color: #fff;
+    text-align: center;
+    display: flex;
+    width: 80%;
+    padding: 1.3em;
+    
+}
+
+.homeContainer span {
+    background-color: #fff;
+    color: #a18bf3;
+    padding: .2em;
+    border-radius: .2em;
+}
+
+
+
