@@ -2,8 +2,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import Container from './components/layout/Container';
 import NavBar from './components/layout/NavBar';
-import Home from './components/pages/Home';
 import Footer from './components/layout/Footer';
+
+import Home from './components/pages/Home';
+import Quiz from './components/pages/Quiz';
 
 function App() {
   return (
@@ -21,7 +23,7 @@ function App() {
 
           <Route
             path='/Quiz'
-            element={<p>Quiz</p>}
+            element={<Quiz/>}
           />
 
           <Route

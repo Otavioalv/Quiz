@@ -1,16 +1,16 @@
-import styles from './Home.module.css'
+import styles from './Quiz.module.css'
 
 import { Link } from 'react-router-dom'
 
-function Home() {
+function Quiz() {
     return(
         <section className={styles.homeContainer}>
             <div className={styles.homeContainer__card}>
-                <h1>Bem-vindo ao <span>CodeQuiz</span></h1>
+                <h1><span>10</span> perguntas de múltipla escolhas</h1>
             </div>
 
             <div className={styles.homeContainer__info}>
-                <p>Este quiz é destinado a iniciantes e entusiastas de tecnologia que desejam testar seus conhecimentos básicos em programação.</p>
+                <p>Você tem <span>60</span> segundos para responder a cada pergunta. Teste seus conhecimentos e divirta-se!</p>
 
                 <div>
                     <Link to='/Quiz' className={styles.homeContainer__btn}>QUIZ</Link>
@@ -20,4 +20,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Quiz
