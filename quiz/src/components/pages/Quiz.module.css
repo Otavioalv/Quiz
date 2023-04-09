@@ -7,6 +7,7 @@
 .homeContainer__card {
     margin-top: 1.5em;
     margin-bottom: 2em;
+    text-align: center;
     font-size: 1.5em;
 }
 
@@ -31,19 +32,6 @@
     color: #a18bf3;
     padding: .2em;
     border-radius: .2em;
-}
-
-.homeContainer__btn{
-    background-color: #a18bf3;
-    text-decoration: none;
-    border-radius: .4em;
-    padding: .3em;
-    transition: .2s ease;
-}
-
-.homeContainer__btn:hover {
-    background-color: #8f7bd6;
-    color: white;
 }
 
 @media only screen and (max-width: 479px) {

@@ -6,6 +6,7 @@ import Footer from './components/layout/Footer';
 
 import Home from './components/pages/Home';
 import Quiz from './components/pages/Quiz';
+import About from './components/pages/About'
 
 function App() {
   return (
@@ -28,12 +29,12 @@ function App() {
 
           <Route
             path='/About'
-            element={<p>Sobre</p>}
+            element={<About/>}
           />
       
         </Routes>
       
-        </Container>
+      </Container>
 
       <Footer/>
 

@@ -1,6 +1,6 @@
 import styles from './Home.module.css'
 
-import { Link } from 'react-router-dom'
+import LinkButton from '../layout/LinkButton'
 
 function Home() {
     return(
@@ -12,9 +12,7 @@ function Home() {
             <div className={styles.homeContainer__info}>
                 <p>Este quiz é destinado a iniciantes e entusiastas de tecnologia que desejam testar seus conhecimentos básicos em programação.</p>
 
-                <div>
-                    <Link to='/Quiz' className={styles.homeContainer__btn}>QUIZ</Link>
-                </div>
+                <LinkButton to='/Quiz' name={'Quiz'}/>
             </div>          
         </section>
     )
