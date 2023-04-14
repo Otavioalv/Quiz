@@ -1,0 +1,90 @@
+{
+    "1" : {
+        "question" : "Qual é o tipo de dados utilizado para representar valores inteiros?", 
+        "options" : ["char", "float", "int", "double"],
+        "response" : "int",
+        "level" : "básico"
+    },
+    "2" : {
+        "question" : "O que é uma variável?", 
+        "options" : [
+            "Um bloco de código que executa uma tarefa específica",
+            "Uma estrutura de dados que armazena um valor",
+            "Uma ferramenta de depuração que encontra erros no código",
+            "Uma palavra-chave usada para definir funções"],
+        "response" : "Uma estrutura de dados que armazena um valor",
+        "level" : "básico"
+    },
+    "3" : {
+        "question" : "Qual é o operador utilizado para atribuir um valor a uma variável?", 
+        "options" : ["=","==",">","<"],
+        "response" : "=",
+        "level" : "básico"
+    },
+    "4" : {
+        "question" : "O que é uma função?", 
+        "options" : [
+            "Uma estrutura de controle que permite repetir um bloco de código",
+            "Um bloco de código que executa uma tarefa específica",
+            "Uma palavra-chave usada para definir variáveis",
+            "Uma estrutura de dados que armazena um conjunto de valores"],
+        "response" : "Um bloco de código que executa uma tarefa específica",
+        "level" : "básico"
+    },
+    "5" : {
+        "question" : "O que é um loop?", 
+        "options" : [
+            "Uma estrutura de controle que permite repetir um bloco de código",
+            "Um bloco de código que executa uma tarefa específica",
+            "Uma palavra-chave usada para definir funções",
+            "Uma estrutura de dados que armazena um conjunto de valores"],
+        "response" : "Uma estrutura de controle que permite repetir um bloco de código",
+        "level" : "básico"
+    },
+    "6" : {
+        "question" : "O que é uma string?", 
+        "options" : [
+            "Dados que representa valores booleanos",
+            "Dados que representa valores inteiros",
+            "Dados que representa texto",
+            "Dados que representa valores decimais"],
+        "response" : "Dados que representa texto",
+        "level" : "básico"
+    },
+    "7" : {
+        "question" : "O que é um array ", 
+        "options" : [
+            "Dados que representa uma lista de valores",
+            "Uma estrutura de controle que permite repetir um bloco de código",
+            "Uma palavra-chave usada para definir funções",
+            "Dados que representa texto"],
+        "response" : "Dados que representa uma lista de valores",
+        "level" : "básico"
+    },
+    "8" : {
+        "question" : "Qual é o operador lógico que representa a negação?", 
+        "options" : ["!","&&","||",">"],
+        "response" : "!",
+        "level" : "intermediário"
+    },
+    "9" : {
+        "question" : "O que é uma classe?", 
+        "options" : [
+            "Uma estrutura de controle que permite repetir um bloco de código",
+            "Uma palavra-chave usada para definir funções",
+            "Uma estrutura que define um objeto e suas propriedades",
+            "Um tipo de dados que representa uma lista de valores"],
+        "response" : "Uma estrutura que define um objeto e suas propriedades",
+        "level" : "avançado"
+    },
+    "10" : {
+        "question" : "O que é a recursão?", 
+        "options" : [
+            "Uma técnica de programação que usa laços para repetir um bloco de código",
+            "Uma técnica de programação que permite que uma função chame a si mesma",
+            "Uma técnica de programação que usa vetores para armazenar dados",
+            "Uma técnica de programação que permite que uma variável seja acessada de qualquer lugar do código"],
+        "response" : "Uma técnica de programação que permite que uma função chame a si mesma",
+        "level" : "avançado"
+    }
+}
