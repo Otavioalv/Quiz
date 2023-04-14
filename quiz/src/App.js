@@ -8,6 +8,7 @@ import Footer from './components/layout/Footer';
 import Home from './components/pages/Home';
 import Quiz from './components/pages/Quiz';
 import About from './components/pages/About'
+import QuizQuestion from './components/pages/QuizQuestion';
 
 function App() {
   return (
@@ -31,6 +32,11 @@ function App() {
           <Route
             path='/About'
             element={<About/>}
+          />
+
+          <Route 
+            path='/QuizQuestion'
+            element={<QuizQuestion/>}
           />
       
         </Routes>

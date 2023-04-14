@@ -12,7 +12,7 @@ function Quiz() {
             <div className={styles.homeContainer__info}>
                 <p>Você tem <span>30</span> segundos para responder a cada pergunta. Teste seus conhecimentos e divirta-se!</p>
                 
-                <LinkButton to={'/'} name={'Iniciar'}/>
+                <LinkButton to={'/QuizQuestion'} name={'Iniciar'}/>
 
             </div>          
         </section>
