@@ -1,34 +1,22 @@
-<Router>
-    <NavBar/>
+<!DOCTYPE html>
 
-    <Container customClass="min-height">
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>CodeQuiz</title>
 
-      <Routes>
-    
-        <Route
-          path='/'
-          element={<Home/>}
-        />
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <!-- <script src="functions.js"></script> -->
+    </head>
 
-        <Route
-          path='/Quiz'
-          element={<Quiz/>}
-        />
+    <body>
+        <nav class="navBar">
+            <ul>
+                <li><a href="./pages/home.html">HOME</a></li>
+                <li><a href="./pages/quiz.html">QUIZ</a></li>
+                <li><a href="./pages/about.html">ABOUT</a></li>
+            </ul>
+        </nav>
+    </body>
 
-        <Route
-          path='/About'
-          element={<About/>}
-        />
-
-        <Route 
-          path='/QuizQuestion'
-          element={<QuizQuestion/>}
-        />
-    
-      </Routes>
-    
-    </Container>
-
-    <Footer/>
-
-  </Router>
+</html>
