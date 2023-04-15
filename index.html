@@ -1,0 +1,34 @@
+<Router>
+    <NavBar/>
+
+    <Container customClass="min-height">
+
+      <Routes>
+    
+        <Route
+          path='/'
+          element={<Home/>}
+        />
+
+        <Route
+          path='/Quiz'
+          element={<Quiz/>}
+        />
+
+        <Route
+          path='/About'
+          element={<About/>}
+        />
+
+        <Route 
+          path='/QuizQuestion'
+          element={<QuizQuestion/>}
+        />
+    
+      </Routes>
+    
+    </Container>
+
+    <Footer/>
+
+  </Router>
