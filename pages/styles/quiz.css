@@ -77,7 +77,7 @@ body {
 .homeContainer__card {
     margin-top: 1.5em;
     margin-bottom: 2em;
-    font-size: 1.5em;
+    font-size: 1.2em;
     text-align: center;
 }
 
@@ -90,12 +90,14 @@ body {
     border-radius: 1em;
     box-shadow: 0px 0px 1.2vh rgba(0, 0, 0, 1);
     margin-bottom: 30vh;
+    margin-top: 60px;
     padding: 1.3em;
-    
 }
 
 .homeContainer__info p{
-    margin-bottom: 4em;
+    background-color: #fff;
+    padding: .2em;
+    border-radius: .2em;
 }
 
 .homeContainer span {
@@ -178,12 +180,12 @@ body {
 
 /* Fim Footer */
 
-
 @media only screen and (min-width: 1400px){
     .homeContainer__info{
         width: 35%;
     }
 }
+
 
 @media only screen and (max-width: 479px){
     body {
