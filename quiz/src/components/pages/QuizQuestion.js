@@ -5,12 +5,10 @@ import questions from '../script/quizes.json'
 function QuizQuestion() {
     return ( 
         <div>
-            <h1>{questions[1].question}</h1>
-
+            <h1>{questions[0].question}</h1>
             <div>
                 <ol>
-                    
-                    <li>{questions[1].options[0]}</li>
+                    <li>{questions[0].options[0]}</li>
                 </ol>
             </div>
         </div>

@@ -1,11 +1,11 @@
 {
-    "1" : {
+    "0" : {
         "question" : "Qual é o tipo de dados utilizado para representar valores inteiros?", 
         "options" : ["char", "float", "int", "double"],
         "response" : "int",
         "level" : "básico"
     },
-    "2" : {
+    "1" : {
         "question" : "O que é uma variável?", 
         "options" : [
             "Um bloco de código que executa uma tarefa específica",
@@ -15,13 +15,13 @@
         "response" : "Uma estrutura de dados que armazena um valor",
         "level" : "básico"
     },
-    "3" : {
+    "2" : {
         "question" : "Qual é o operador utilizado para atribuir um valor a uma variável?", 
         "options" : ["=","==",">","<"],
         "response" : "=",
         "level" : "básico"
     },
-    "4" : {
+    "3" : {
         "question" : "O que é uma função?", 
         "options" : [
             "Uma estrutura de controle que permite repetir um bloco de código",
@@ -31,7 +31,7 @@
         "response" : "Um bloco de código que executa uma tarefa específica",
         "level" : "básico"
     },
-    "5" : {
+    "4" : {
         "question" : "O que é um loop?", 
         "options" : [
             "Uma estrutura de controle que permite repetir um bloco de código",
@@ -41,7 +41,7 @@
         "response" : "Uma estrutura de controle que permite repetir um bloco de código",
         "level" : "básico"
     },
-    "6" : {
+    "5" : {
         "question" : "O que é uma string?", 
         "options" : [
             "Dados que representa valores booleanos",
@@ -51,7 +51,7 @@
         "response" : "Dados que representa texto",
         "level" : "básico"
     },
-    "7" : {
+    "6" : {
         "question" : "O que é um array ", 
         "options" : [
             "Dados que representa uma lista de valores",
@@ -61,13 +61,13 @@
         "response" : "Dados que representa uma lista de valores",
         "level" : "básico"
     },
-    "8" : {
+    "7" : {
         "question" : "Qual é o operador lógico que representa a negação?", 
         "options" : ["!","&&","||",">"],
         "response" : "!",
         "level" : "intermediário"
     },
-    "9" : {
+    "8" : {
         "question" : "O que é uma classe?", 
         "options" : [
             "Uma estrutura de controle que permite repetir um bloco de código",
@@ -77,7 +77,7 @@
         "response" : "Uma estrutura que define um objeto e suas propriedades",
         "level" : "avançado"
     },
-    "10" : {
+    "9" : {
         "question" : "O que é a recursão?", 
         "options" : [
             "Uma técnica de programação que usa laços para repetir um bloco de código",
