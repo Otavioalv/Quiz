@@ -19,7 +19,7 @@
 }
 
 .homeContainer__card {
-    font-size: 1.5em;
+    font-size: 1em;
     text-align: center;
 }
 
@@ -74,6 +74,12 @@
 
 .homeContainer__list li{
     margin: 1em;
+}
+
+.processBar {
+    background-color: #a18bf3;
+    border-radius: 10px;
+    height: 10px;
 }
 
 @media only screen and (max-width: 479px) {

@@ -59,6 +59,10 @@
     .homeContainer__btn {
         padding: .3em .3em .7em .3em;
     }
+
+    .homeContainer span{
+        padding-bottom: 15px;
+    }
 }
 
 

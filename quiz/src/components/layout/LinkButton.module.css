@@ -11,3 +11,9 @@
     background-color: #8f7bd6;
     color: white;
 }
+
+@media only screen and (max-width: 479px) {
+    .btn {
+        padding-bottom: 15px;
+    }
+}
