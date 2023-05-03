@@ -2,6 +2,7 @@ import styles from './QuizQuestion.module.css'
 
 import questions from '../script/quizes.json'
 import { useState } from 'react'
+import ProcessBar from '../layout/ProcessBar'
 
 function QuizQuestion() {
     
@@ -10,12 +11,6 @@ function QuizQuestion() {
 
     const [use, setUse] = useState(0)
     const [place, setPlace] = useState("")
-
-    const processBar = document.getElementById("iProcessBar")
-
-    processBar.style.width = "100px";
-    processBar.style.height = "100px";
-    processBar.style.backgroundColor = "blue";
 
     function optionChose(option) {
         if(option === questions[pos].response){
@@ -57,7 +52,7 @@ function QuizQuestion() {
                      </>
                 ) : (
                     <>
-                    <div id="iProcessBar"></div>
+                    <ProcessBar/>
                     <div className={styles.homeContainer__card}>
                         <h1>{questions[pos].question}</h1>
                     </div>
