@@ -1,6 +1,9 @@
-// import styles from './ProcessBar.module.css'
+/* import styles from './ProcessBar.module.css' */
 
 // import { useEffect } from 'react';
+
+import { CircularProgressbar } from 'react-circular-progressbar'
+import 'react-circular-progressbar/dist/styles.css';
 
 function ProcessBar({val, tot, type}){
 
@@ -39,6 +42,7 @@ function ProcessBar({val, tot, type}){
 
     const styleProcessBarLiB = {
         position: 'relative',
+        display: 'flex',
         bottom: '2px',
         width: `${val}%`,
         height: '6px',
@@ -46,28 +50,6 @@ function ProcessBar({val, tot, type}){
         transition: 'all .8s ease-in-out',
         borderRadius: '10px'
     }
-
-    //Process bar Circle
-
-    const styleProcessBarCi = {
-        width: '100px',
-        height: '100px',
-        textAlign: 'right',
-        border: '3px solid #f0f',
-        borderRadius: '50%'
-    }
-
-   /*  const styleProcessBarCiB = {
-        position: 'relative',
-        bottom: '2px',
-        width: `${val}%`,
-        height: '6px',
-        backgroundColor: test(),
-        transition: 'all .8s ease-in-out',
-        borderRadius: '50%',
-        border: '3px solid #f0f',
-    } */
-
     // viewBox 25 25 50 
 
     /* 
@@ -84,8 +66,7 @@ function ProcessBar({val, tot, type}){
             </div>
         }
         {type === 'circle' &&
-            {/* <div style={styleProcessBarCi}>
-            </div> */}
+            <CircularProgressbar value={val} text={`${val}%`}/>
         }
         </>
     )

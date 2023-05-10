@@ -43,7 +43,6 @@ function QuizQuestion() {
         <section className={styles.homeContainer}>
                 {pos === 10 ? (
                      <>
-                     <ProcessBar val={pos} tot='10' type='line'/>
                      <div className={styles.homeContainer__card}>
                          <p>
                             <h1>Aproveitamento: {use}% 
@@ -55,7 +54,7 @@ function QuizQuestion() {
                      </>
                 ) : (
                     <>
-                    <ProcessBar val={pos} tot='10' type='line'/>
+                    <ProcessBar type='line' val={pos} tot={"10"}/>
 
                     <div className={styles.homeContainer__card}>
                         <h1>{questions[pos].question}</h1>
