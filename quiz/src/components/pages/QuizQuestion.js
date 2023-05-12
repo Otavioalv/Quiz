@@ -1,8 +1,9 @@
 import styles from './QuizQuestion.module.css'
 
 import questions from '../script/quizes.json'
-import { useState } from 'react'
+import LinkButton from '../layout/LinkButton'
 import ProcessBar from '../layout/ProcessBar'
+import { useState } from 'react'
 
 function QuizQuestion() {
     
@@ -20,13 +21,13 @@ function QuizQuestion() {
 
             //0 a 4 ruim, 5 a 7 boa, 8 a 10 otima
             if(pts >= 0 && pts <= 4){
-                setPlace("ruim")
+                setPlace("RUIM")
             }
             else if(pts >= 5 && pts <= 7){
-                setPlace("boa")
+                setPlace("BOA")
             }
             else{
-                setPlace("otima")
+                setPlace("OTIMA")
             }
         }
 
@@ -46,10 +47,19 @@ function QuizQuestion() {
                      <div className={styles.homeContainer__card}>
                          <p>
                             <h1>Aproveitamento: {use}% 
-                                {<ProcessBar val= {use} tot='100' type='circle'/>}
+                                {<div className={styles.circle}>
+                                    <ProcessBar 
+                                        val= {use} 
+                                        tot='100' 
+                                        type='circle'
+                                        width='110px'
+                                        height='110px'
+                                    />
+                                </div>}
                             </h1>
                             <h1>Classificação: {place}</h1>
                          </p>
+                         <LinkButton to={'/'} name={"Home"}/>
                      </div>
                      </>
                 ) : (

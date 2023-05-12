@@ -59,6 +59,13 @@
     background-color: rgba(0, 0, 0, 0.048);
 }
 
+.circle{
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 @media only screen and (max-width: 479px) {
     .homeContainer{
         margin-top: 15em;
@@ -66,7 +73,11 @@
         width: 85%;
     }
 
+    .homeContainer__card {
+        font-size: 1.5em;
+    }
     .homeContainer__btn {
+        font-size: 1.4em;
         padding: .3em .3em .7em .3em;
     }
 }

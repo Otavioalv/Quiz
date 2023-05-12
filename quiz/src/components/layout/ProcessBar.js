@@ -1,11 +1,6 @@
-/* import styles from './ProcessBar.module.css' */
-
-// import { useEffect } from 'react';
-
 import { CircularProgressbar } from 'react-circular-progressbar'
-import 'react-circular-progressbar/dist/styles.css';
-
-function ProcessBar({val, tot, type}){
+import 'react-circular-progressbar/dist/styles.css'
+function ProcessBar({val, tot, type, width, height}){
 
     val = (val * 100) / tot
 
@@ -21,7 +16,7 @@ function ProcessBar({val, tot, type}){
         warning: '#fdd13a',
         success: '#24a148'
     }
-    const test = (() => {   
+    const color = (() => {   
         //de 0 a 40, de 40 a 80
         if(val >= 0 && val < 40) 
             return colors.error
@@ -46,18 +41,16 @@ function ProcessBar({val, tot, type}){
         bottom: '2px',
         width: `${val}%`,
         height: '6px',
-        backgroundColor: test(),
+        backgroundColor: color(),
         transition: 'all .8s ease-in-out',
         borderRadius: '10px'
     }
-    // viewBox 25 25 50 
 
-    /* 
-        use efect recebe 2 parametros useEffect(1, 2) 
+    const styleProcessBarCi = {
+        width: `${width}`,
+        height: `${height}`,
+    }
 
-            1_ a função que sera executada como efeito colaterl
-            2_ Uma array de dependencias opcionais 
-    */
     return(
         <>
         {type === 'line' &&
@@ -66,7 +59,47 @@ function ProcessBar({val, tot, type}){
             </div>
         }
         {type === 'circle' &&
-            <CircularProgressbar value={val} text={`${val}%`}/>
+            <div style={styleProcessBarCi}>
+                <CircularProgressbar
+            value={val}
+            text={`${val}%`}
+            styles={{
+              // Customize the path, i.e. the "completed progress"
+              path: {
+                // Path color
+                stroke: `${color()}`,
+                // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+                strokeLinecap: 'butt',
+                // Customize transition animation
+                transition: 'stroke-dashoffset 0.5s ease 0s',
+                // Rotate the path
+                transform: 'rotate(0.25turn)',
+                transformOrigin: 'center center',
+              },
+              // Customize the circle behind the path, i.e. the "total progress"
+              trail: {
+                // Trail color
+                stroke: '#f7f7f7dd',
+                // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+                strokeLinecap: 'butt',
+                // Rotate the trail
+                transform: 'rotate(0.25turn)',
+                transformOrigin: 'center center',
+              },
+              // Customize the text
+              text: {
+                // Text color
+                fill: `${color()}`,
+                // Text size
+                fontSize: '',
+              },
+              // Customize background - only used when the `background` prop is true
+              background: {
+                fill: '#3e98c7',
+              },
+            }}
+          /> 
+            </div>
         }
         </>
     )
