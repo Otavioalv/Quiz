@@ -1,0 +1,36 @@
+/* //Process bar Line
+const styleProcessBarLi = {
+    width: '100%',
+    height: '2px',
+    backgroundColor: '#f7f7f7dd',
+    textAlign: 'right',
+}
+
+const styleProcessBarLiB = {
+    position: 'relative',
+    display: 'flex',
+    bottom: '2px',
+    width: `${val}%`,
+    height: '6px',
+    backgroundColor: color(),
+    transition: 'all .8s ease-in-out',
+    borderRadius: '10px'
+} */
+
+.ProcessBarLi {
+    width: 100%;
+    height: 2px;
+    background-color: #f7f7f7dd;
+    text-align: right;
+}
+
+.ProcessBarLiB {
+    position: relative;
+    display: flex;
+    bottom: 2px;
+    width: 10%;
+    height: 6px;
+    background-color: #f00;
+    transition: all .8s ease-in-out;
+    border-radius: 10px;
+}
