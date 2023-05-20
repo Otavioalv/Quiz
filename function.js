@@ -1,10 +1,14 @@
 var pos = 0 // Posição da pergunta da varialvel
 var percent = 0 
 var ponts = 0 // pontuação
+var time = 0
 var place
+
 const question = document.getElementById("question"); 
 const opcs = document.querySelectorAll("#opcs li button");
 const processBar = document.getElementById("IProcessBarLiB");
+const cronometre = document.getElementById("ICronometre");
+
 const colors = { //Objeto de cores do ProcessBar
     error: '#da1e28',
     warning: '#fdd13a',
@@ -20,11 +24,35 @@ const color = ((val) => { //Definie as cores a serem usadas de acordo com a vari
     else
         return colors.success
 
-})
+});
 
+
+var timer 
+
+function startTimer() {
+    timer = setInterval(function() {
+        console.log(time);
+        cronometre.style.backgroundColor = `${color(100 - (time / 15) * 100)}`;
+        
+        time++;
+        cronometre.style.width = `${100 - (time / 15) * 100}%`;
+        
+        if(time > 15){
+            optionChose();
+            cronometre.style.width = "100%";
+        };
+}, 1000)
+};
+
+function stopTimer() {
+    clearInterval(timer);
+};
 
 
 function optionChose(opc) { // opc, e a posição da opções de quests[].options[opc]
+    
+    time = 0
+    cronometre.style.width = "100%"
 
     fetch('quests.json')
     .then(response => response.json())
@@ -35,7 +63,6 @@ function optionChose(opc) { // opc, e a posição da opções de quests[].option
         //console.log(option)
         if(option === quests[pos].response) {
             ponts++
-            console.log(`\nPontos: ${ponts}\n`)
         } 
 
         if(ponts >= 0 && ponts <= 4)
@@ -66,12 +93,13 @@ function optionChose(opc) { // opc, e a posição da opções de quests[].option
 /* fim função quizQuestions.html */
 function endQuests(){
     console.log("Fim da questoes");
+    
+    clearInterval(timer)
+    cronometre.style.width = "0%"
 
     const endQuest = document.querySelectorAll("#typeScreen");
     var percentCircle = 0;
     var percentProgress = 0;
-    
-    console.log(ponts)
 
     if(ponts != 0) {
         percentCircle = (ponts * 100) / 10;
@@ -94,5 +122,6 @@ function endQuests(){
             <div>
                 <a href="./about.html" class="btn" onclick="startQuiz()">SAIR</a>
             </div>
-        </p>`
+        </p>
+        `
 }
