@@ -1,22 +1,3 @@
-/* //Process bar Line
-const styleProcessBarLi = {
-    width: '100%',
-    height: '2px',
-    backgroundColor: '#f7f7f7dd',
-    textAlign: 'right',
-}
-
-const styleProcessBarLiB = {
-    position: 'relative',
-    display: 'flex',
-    bottom: '2px',
-    width: `${val}%`,
-    height: '6px',
-    backgroundColor: color(),
-    transition: 'all .8s ease-in-out',
-    borderRadius: '10px'
-} */
-
 .ProcessBarLi {
     width: 100%;
     height: 2px;
@@ -28,9 +9,51 @@ const styleProcessBarLiB = {
     position: relative;
     display: flex;
     bottom: 2px;
-    width: 10%;
     height: 6px;
-    background-color: #f00;
-    transition: all .8s ease-in-out;
+    width: 0;
+    background-color: red;
+    transition: all 1s ease-in-out;
     border-radius: 10px;
+}
+
+/* circular */
+
+
+.container{
+    display: flex;
+    align-items: cente;
+    justify-content: center;
+    padding: 9px 0;
+    border-radius: 8px;
+    background: #fff;
+
+}
+.circular-progress{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background: conic-gradient(#7d2ae8 0deg, #ededed 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circular-progress::before{
+    content: "";
+    position: absolute;
+    height: 123px;
+    width: 123px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.progress-value{
+    position: relative;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #7d2ae8;
+}
+.text{
+    font-size: 30px;
+    font-weight: 500;
+    color: #606060;
 }
