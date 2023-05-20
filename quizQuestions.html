@@ -6,7 +6,8 @@
         <link rel="stylesheet" type="text/css" href="quizQuestions.css"/>
         <link rel="stylesheet" type="text/css" href="progressBar.css"/>
 
-        <script src="function.js"></script>
+        <script src="function.js" defer></script>
+        
 
     </head>
     <body>
@@ -21,16 +22,18 @@
         <section class="homeContainer">
            <div class="homeContainer__card">
                 
+            <!-- process bar -->
                 <div class="ProcessBarLi">
                     <div class="ProcessBarLiB"></div>
                 </div>
+            <!--  -->
                 
                 <div>
-                    <h1 id="0">Qual é o tipo de dados utilizado para representar valores inteiros?</h1>
+                    <h1 id="question">Qual é o tipo de dados utilizado para representar valores inteiros?</h1>
                 </div>
 
                 <div class="homeContainer__list">
-                    <ul>
+                    <ul id="opcs">
                         <li id="opc-0"><button class="homeContainer__btn" onclick="optionChose(0)">char</button></li>
                         <li id="opc-1"><button class="homeContainer__btn" onclick="optionChose(1)">float</button></li>
                         <li id="opc-2"><button class="homeContainer__btn" onclick="optionChose(2)">int</button></li>
