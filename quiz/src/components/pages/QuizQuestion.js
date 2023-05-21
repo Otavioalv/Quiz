@@ -13,6 +13,9 @@ function QuizQuestion() {
     const [use, setUse] = useState(0)
     const [place, setPlace] = useState("")
 
+    var timer 
+    const [time, setTime] = useState(0)
+
     function optionChose(option) {
         if(option === questions[pos].response){
             console.log("Acertou")
@@ -38,6 +41,13 @@ function QuizQuestion() {
         }
 
 
+    }
+
+    function startTimer() {
+        timer = setInterval(function() {
+            
+
+        });
     }
     
     return (
