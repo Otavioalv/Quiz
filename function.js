@@ -5,9 +5,9 @@ var time = 0
 var place
 
 const question = document.getElementById("question"); 
-const opcs = document.querySelectorAll("#opcs li button");
 const processBar = document.getElementById("IProcessBarLiB");
 const cronometre = document.getElementById("ICronometre");
+const opcs = document.querySelectorAll("#opcs li button");
 
 const colors = { //Objeto de cores do ProcessBar
     error: '#da1e28',
@@ -30,7 +30,7 @@ const color = ((val) => { //Definie as cores a serem usadas de acordo com a vari
 var timer 
 function startTimer() {
     timer = setInterval(function() {
-        console.log(time);
+        //console.log(time);
         cronometre.style.backgroundColor = `${color(100 - (time / 15) * 100)}`;
         
         time++;
@@ -49,7 +49,7 @@ function stopTimer() {
     cronometre.style.width = "100%"
 };
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() { // Ao iniciar a pagina, a função startTimer() inicia 
     startTimer();
 });
 
@@ -109,7 +109,7 @@ function endQuests(){
         percentCircle = (ponts * 100) / 10;
         percentProgress = 3.6 * percentCircle;
 
-        console.log("porcento progresso: ", percentProgress);
+        //console.log("porcento progresso: ", percentProgress);
     }
 
     endQuest[0].innerHTML = `
