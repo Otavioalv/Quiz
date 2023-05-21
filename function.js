@@ -28,7 +28,6 @@ const color = ((val) => { //Definie as cores a serem usadas de acordo com a vari
 
 
 var timer 
-
 function startTimer() {
     timer = setInterval(function() {
         console.log(time);
@@ -46,13 +45,17 @@ function startTimer() {
 
 function stopTimer() {
     clearInterval(timer);
+    time = 0
+    cronometre.style.width = "100%"
 };
 
+document.addEventListener('DOMContentLoaded', function() {
+    startTimer();
+});
 
 function optionChose(opc) { // opc, e a posição da opções de quests[].options[opc]
     
-    time = 0
-    cronometre.style.width = "100%"
+    stopTimer()
 
     fetch('quests.json')
     .then(response => response.json())
@@ -89,13 +92,14 @@ function optionChose(opc) { // opc, e a posição da opções de quests[].option
         else 
             endQuests();
     });
+
+    startTimer()
 }
 /* fim função quizQuestions.html */
 function endQuests(){
-    console.log("Fim da questoes");
-    
-    clearInterval(timer)
-    cronometre.style.width = "0%"
+
+    stopTimer()
+    cronometre.style.width = "0%" 
 
     const endQuest = document.querySelectorAll("#typeScreen");
     var percentCircle = 0;
