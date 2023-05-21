@@ -29,11 +29,9 @@ const color = ((val) => { //Definie as cores a serem usadas de acordo com a vari
 
 var timer 
 function startTimer() {
-    timer = setInterval(function() {
-        //console.log(time);
-        cronometre.style.backgroundColor = `${color(100 - (time / 15) * 100)}`;
-        
+    timer = setInterval(function() {    
         time++;
+        cronometre.style.backgroundColor = `${color(100 - (time / 15) * 100)}`;
         cronometre.style.width = `${100 - (time / 15) * 100}%`;
         
         if(time > 15){
@@ -63,7 +61,6 @@ function optionChose(opc) { // opc, e a posição da opções de quests[].option
         
         const option = quests[pos].options[opc]
         
-        //console.log(option)
         if(option === quests[pos].response) {
             ponts++
         } 
@@ -85,7 +82,6 @@ function optionChose(opc) { // opc, e a posição da opções de quests[].option
             question.innerHTML = quests[pos].question;
 
             Array.from(opcs).map(function(opc, p) {
-                //console.log(`Nome: ${opc.innerHTML}  posição: ${p}`)
                 opc.innerHTML = quests[pos].options[p]
             });
         }
@@ -108,8 +104,6 @@ function endQuests(){
     if(ponts != 0) {
         percentCircle = (ponts * 100) / 10;
         percentProgress = 3.6 * percentCircle;
-
-        //console.log("porcento progresso: ", percentProgress);
     }
 
     endQuest[0].innerHTML = `

@@ -60,5 +60,5 @@
 #ICronometre{
     width: 100%;
     background-color: #24a148;
-    transition: width .4s ease-in-out;
+    transition: background-color .1s ease-in-out, width .4s ease-in-out;
 }/* Cronometro */
