@@ -1,11 +1,28 @@
-import styles from './QuizQuestion.module.css'
+import styles from './QuizQuestion.module.css';
 
-import questions from '../script/quizes.json'
-import LinkButton from '../layout/LinkButton'
-import ProcessBar from '../layout/ProcessBar'
-import { useState } from 'react'
+import questions from '../script/quizes.json';
+import LinkButton from '../layout/LinkButton';
+import ProcessBar from '../layout/ProcessBar';
+
+import { useState } from 'react';
+import { useTimer } from 'react-timer-hook';
 
 function QuizQuestion() {
+
+    function MyTimer({ expiryTimestamp }) {
+        const {
+          seconds,
+          minutes,
+          hours,
+          days,
+          isRunning,
+          start,
+          pause,
+          resume,
+          restart,
+        } = useTimer({ expiryTimestamp, onExpire: () => console.warn('onExpire called') })}
+
+
     
     const [pos, setPos] = useState(0)
     const [pts, setPts] = useState(0)
@@ -13,10 +30,11 @@ function QuizQuestion() {
     const [use, setUse] = useState(0)
     const [place, setPlace] = useState("")
 
-    var timer 
-    const [time, setTime] = useState(0)
 
     function optionChose(option) {
+
+
+
         if(option === questions[pos].response){
             console.log("Acertou")
             setPts(pts+1)
@@ -43,13 +61,10 @@ function QuizQuestion() {
 
     }
 
-    function startTimer() {
-        timer = setInterval(function() {
-            
-
-        });
-    }
     
+
+
+
     return (
         <section className={styles.homeContainer}>
                 {pos === 10 ? (
@@ -75,6 +90,8 @@ function QuizQuestion() {
                 ) : (
                     <>
                     <ProcessBar type='line' val={pos} tot={"10"}/>
+                    
+                    <h1>{seconds}</h1>
 
                     <div className={styles.homeContainer__card}>
                         <h1>{questions[pos].question}</h1>
@@ -95,5 +112,6 @@ function QuizQuestion() {
         </section>
   );
 }
+
 
 export default QuizQuestion;
