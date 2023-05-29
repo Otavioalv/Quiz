@@ -7,23 +7,16 @@ import ProcessBar from '../layout/ProcessBar';
 import { useState } from 'react';
 import { useTimer } from 'react-timer-hook';
 
-function QuizQuestion() {
-
-    function MyTimer({ expiryTimestamp }) {
-        const {
-          seconds,
-          minutes,
-          hours,
-          days,
-          isRunning,
-          start,
-          pause,
-          resume,
-          restart,
-        } = useTimer({ expiryTimestamp, onExpire: () => console.warn('onExpire called') })}
+function QuizQuestion({ expiryTimestamp }) {
+    const {
+        seconds,
+        pause,
+        restart,
+    } = useTimer({ expiryTimestamp, onExpire: () => {
+        console.log('onExpire called')
+    } });
 
 
-    
     const [pos, setPos] = useState(0)
     const [pts, setPts] = useState(0)
 
@@ -31,11 +24,21 @@ function QuizQuestion() {
     const [place, setPlace] = useState("")
 
 
+    function restartTime(){
+        const time = new Date();
+        time.setSeconds(time.getSeconds() + 15);
+        restart(time)
+    }
+
+
+    // Funções de tempo
+    if(seconds === 0 && pos < 10){
+        optionChose()
+    }
+    /* --- */
     function optionChose(option) {
-
-
-
-        if(option === questions[pos].response){
+        console.log(option)
+        if(option === questions[pos]?.response){
             console.log("Acertou")
             setPts(pts+1)
             setUse(((pts+1)*100) / 10)
@@ -56,62 +59,67 @@ function QuizQuestion() {
 
         if(pos === 10){
             setPos(0)
+            pause()
         }
 
-
+        restartTime()
     }
 
-    
 
 
-
-    return (
-        <section className={styles.homeContainer}>
-                {pos === 10 ? (
-                     <>
-                     <div className={styles.homeContainer__card}>
-                         <p>
-                            <h1>Aproveitamento: {use}% 
-                                {<div className={styles.circle}>
-                                    <ProcessBar 
-                                        val= {use} 
-                                        tot='100' 
-                                        type='circle'
-                                        width='110px'
-                                        height='110px'
-                                    />
-                                </div>}
-                            </h1>
-                            <h1>Classificação: {place}</h1>
-                         </p>
-                         <LinkButton to={'/'} name={"Home"}/>
-                     </div>
-                     </>
-                ) : (
+  return (
+    <>
+            {pos === 10 ? (
                     <>
-                    <ProcessBar type='line' val={pos} tot={"10"}/>
-                    
-                    <h1>{seconds}</h1>
-
                     <div className={styles.homeContainer__card}>
-                        <h1>{questions[pos].question}</h1>
-                    </div>
-                    <div className={styles.homeContainer__list}>
-                        <ul>
-                            {questions[pos].options.map((option, key) => (
-                                <li key={key}>
-                                    <button onClick={() => optionChose(option)} className={styles.homeContainer__btn}>
-                                        {option}
-                                    </button>
-                                </li>
-                            ))}
-                        </ul>
+                        <p>
+                        <h1>Aproveitamento: {use}% 
+                            {<div className={styles.circle}>
+                                <ProcessBar 
+                                    val= {use} 
+                                    tot='100' 
+                                    type='circle'
+                                    width='110px'
+                                    height='110px'
+                                />
+                            </div>}
+                        </h1>
+                        <h1>Classificação: {place}</h1>
+                        </p>
+                        <LinkButton to={'/About'} name={"ABOUT"}/>
                     </div>
                     </>
-                )}
-        </section>
+            ) : (
+                <>
+                <ProcessBar type='line' val={pos} tot={"10"}/>
+                <ProcessBar type='line' val={seconds} tot={"15"}/>
+            
+                <div className={styles.homeContainer__card}>
+                    <h1>{questions[pos].question}</h1>
+                </div>
+                <div className={styles.homeContainer__list}>
+                    <ul>
+                        {questions[pos].options.map((option, key) => (
+                            <li key={key}>
+                                <button onClick={() => optionChose(option)} className={styles.homeContainer__btn}>
+                                    {option}
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                </>
+            )}
+        </>
   );
 }
 
-
-export default QuizQuestion;
+export default function App() {
+  const time = new Date();
+  time.setSeconds(time.getSeconds() + 15); // 10 minutes timer
+  return (
+    <section className={styles.homeContainer}>
+      <QuizQuestion expiryTimestamp={time} />
+    </section>
+  );
+}

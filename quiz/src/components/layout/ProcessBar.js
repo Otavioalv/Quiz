@@ -31,6 +31,7 @@ function ProcessBar({val, tot, type, width, height}){
     const styleProcessBarLi = {
         width: '100%',
         height: '2px',
+        margin: '4px', 
         backgroundColor: '#f7f7f7dd',
         textAlign: 'right',
     }
@@ -64,36 +65,26 @@ function ProcessBar({val, tot, type, width, height}){
             value={val}
             text={`${val}%`}
             styles={{
-              // Customize the path, i.e. the "completed progress"
               path: {
-                // Path color
                 stroke: `${color()}`,
-                // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
                 strokeLinecap: 'butt',
-                // Customize transition animation
                 transition: 'stroke-dashoffset 0.5s ease 0s',
-                // Rotate the path
                 transform: 'rotate(0.25turn)',
                 transformOrigin: 'center center',
               },
-              // Customize the circle behind the path, i.e. the "total progress"
+
               trail: {
-                // Trail color
                 stroke: '#f7f7f7dd',
-                // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
                 strokeLinecap: 'butt',
-                // Rotate the trail
                 transform: 'rotate(0.25turn)',
                 transformOrigin: 'center center',
               },
-              // Customize the text
+
               text: {
-                // Text color
                 fill: `${color()}`,
-                // Text size
                 fontSize: '',
               },
-              // Customize background - only used when the `background` prop is true
+              
               background: {
                 fill: '#3e98c7',
               },

@@ -24,7 +24,7 @@
 }
 
 .homeContainer__btn{
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
     color:black;
     font-size: 0.8em;
     font-weight: bolder;
@@ -33,6 +33,7 @@
     padding: .5em 2em .5em 2em;
     font-weight: 600;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .homeContainer__btn:hover{
@@ -75,9 +76,19 @@
 
     .homeContainer__card {
         font-size: 1.5em;
+        padding: 15px;
     }
     .homeContainer__btn {
         font-size: 1.4em;
         padding: .3em .3em .7em .3em;
     }
+
+    .homeContainer__btn:hover{
+        color:#000;
+    }
+
+    .homeContainer__list li:hover {
+        background-color: transparent;
+    }
+    
 }

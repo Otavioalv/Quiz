@@ -4,12 +4,6 @@
     align-items: center;
 }
 
-/* .homeContainer__card {
-    margin-top: 1.5em;
-    margin-bottom: 2em;
-    font-size: 1.5em;
-    text-align: center;
-} */
 
 .homeContainer__info {
     background-color: #fff;
@@ -22,10 +16,6 @@
     padding: 1.3em;
     
 }
-
-/* .homeContainer__info p{
-    margin-bottom: 4em;
-} */
 
 
 .homeContainer span {
